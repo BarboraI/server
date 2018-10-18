@@ -1,0 +1,15 @@
+{
+  "name": "wms_server",
+  "version": "1.0.0",
+  "description": "Moj super projekt",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Barbora",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
