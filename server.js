@@ -9,23 +9,22 @@ var server = express();
 var PORT = 3000
 
 
-server.get('/getCapabilities', function (request, response) {
-   response.sendFile(path.join(__dirname + "/getCappabilitiesDocuments.xml"))
+server.get('/wms', function (request, response) {
+  var params = request.query;
+  console.log(params)
+ if(params.service=== 'wms' && params.request==='GetCapabilities'){
+   response.sendFile(path.join(__dirname, 'nase_vrstvy.xml'))
+  }
+  else if(params.service=== 'wms' && params.request==='GetMap'){
+    
+  console.log('Idem robit map')
+}
+  else {
+    response.send ('nepodporovana metoda')
+  }
 
 })
 
-server.get ("/Ahoj/neviem", function (request, response) {
-    console.log(request.query.stvrtok);
-  response.send(request.query);
+server.listen(PORT,function(){
+ console.log("Server listening on port"+PORT+"!" );
 });
-
-
-server.get("/some/path", function(request, response) {
-    console.log(request.query.stvrtok);
-    response.send(request.query);
-  });
-
-
-server.listen(PORT, function() {
-    console.log("Server listening on port " + PORT + "!");
-  });
