@@ -43,66 +43,32 @@
         </DCPType>
       </GetCapabilities>
       <GetMap>
-		<Format>image/bmp</Format>
-        <Format>image/jpeg</Format>
-        <Format>image/tiff</Format>
-        <Format>image/png</Format>
-        <Format>image/png8</Format>
-        <Format>image/png24</Format>
-        <Format>image/png32</Format>
-        <Format>image/gif</Format>
-        <Format>image/svg+xml</Format>
+		  <Format>image/png</Format>
+        
         <DCPType>
           <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?"/></Get></HTTP>
         </DCPType>
       </GetMap>
-      <GetFeatureInfo>
-        <Format>application/vnd.esri.wms_raw_xml</Format>
-        <Format>application/vnd.esri.wms_featureinfo_xml</Format>
-        <Format>application/vnd.ogc.wms_xml</Format>
-        <Format>application/geojson</Format>
-        <Format>text/xml</Format>
-        <Format>text/html</Format>
-        <Format>text/plain</Format>
-        <DCPType>
-          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?"/></Get></HTTP>
-        </DCPType>
-      </GetFeatureInfo>
-      <esri_wms:GetStyles>
-        <Format>application/vnd.ogc.sld+xml</Format>
-        <DCPType>
-          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?"/></Get></HTTP>
-        </DCPType>
-      </esri_wms:GetStyles>
-    </Request>
-    <Exception>
-      <Format>application/vnd.ogc.se_xml</Format>
-      <Format>application/vnd.ogc.se_inimage</Format>
-      <Format>application/vnd.ogc.se_blank</Format>
-      <Format>text/xml</Format>
-      <Format>XML</Format>
-    </Exception>
+      
     <Layer>
       <Title><![CDATA[Budovy]]></Title>
-<CRS>CRS:84</CRS>
-<CRS>EPSG:4326</CRS>
+
 <CRS>EPSG:5514</CRS>
  <!-- alias 5514 -->
 <CRS>EPSG:102067</CRS>
 <EX_GeographicBoundingBox><westBoundLongitude>17.869550</westBoundLongitude><eastBoundLongitude>17.917076</eastBoundLongitude><southBoundLatitude>48.722371</southBoundLatitude><northBoundLatitude>48.7512</northBoundLatitude></EX_GeographicBoundingBox>
 <BoundingBox CRS="EPSG:5514" minx="-507668.121" miny="-1218115.828" maxx="-511572.982" maxy="-1222268.772"/>
-      <Layer queryable="1">
+      <Layer queryable="0">
         <Title><![CDATA[Cesty]]></Title>
         <Abstract><![CDATA[]]></Abstract>
-<CRS>CRS:84</CRS>
-<CRS>EPSG:4326</CRS>
+
 <CRS>EPSG:5514</CRS>
  <!-- alias 5514 -->
 <CRS>EPSG:102067</CRS>
 <EX_GeographicBoundingBox><westBoundLongitude>17.869550</westBoundLongitude><eastBoundLongitude>17.917076</eastBoundLongitude><southBoundLatitude>48.722371</southBoundLatitude><northBoundLatitude>48.7512</northBoundLatitude></EX_GeographicBoundingBox>
 <BoundingBox CRS="EPSG:5514" minx="-507668.121" miny="-1218115.828" maxx="-511572.982" maxy="-1222268.772"/>
         <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
-      <Layer queryable="1">    
+      <Layer queryable="0">    
     </Layer>
   </Capability>
 </WMS_Capabilities>
