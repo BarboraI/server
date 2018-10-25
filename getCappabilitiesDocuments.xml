@@ -1,0 +1,1385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WMS_Capabilities version="1.3.0"
+  xmlns="http://www.opengis.net/wms"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:esri_wms="http://www.esri.com/wms"
+  xsi:schemaLocation="http://www.opengis.net/wms http://schemas.opengis.net/wms/1.3.0/capabilities_1_3_0.xsd http://www.esri.com/wms https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?version=1.3.0%26service=WMS%26request=GetSchemaExtension">
+  <Service>
+    <Name><![CDATA[WMS]]></Name>
+    <Title><![CDATA[SK_UGKK_ZBGIS_WMS_Antropogenne_prvky]]></Title>
+    <Abstract><![CDATA[Zobrazenie atribútových údajov kategórie antropogénne prvky zo súboru objektov ZB GIS (A.2.2.2)]]></Abstract>
+    <KeywordList><Keyword><![CDATA[WMS, Antropogénne prvky]]></Keyword></KeywordList>
+    <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?"/>
+    <ContactInformation>
+      <ContactPersonPrimary>
+        <ContactPerson><![CDATA[GKÚ]]></ContactPerson>
+        <ContactOrganization><![CDATA[Geodetický a kartografický ústav Bratislava]]></ContactOrganization>
+      </ContactPersonPrimary>
+      <ContactPosition><![CDATA[vedúci odboru]]></ContactPosition>
+      <ContactAddress>
+        <AddressType><![CDATA[Poštová adresa]]></AddressType>
+        <Address><![CDATA[Chlumeckého 4]]></Address>
+        <City><![CDATA[Bratislava]]></City>
+        <StateOrProvince><![CDATA[Bratislava II]]></StateOrProvince>
+        <PostCode><![CDATA[82745]]></PostCode>
+        <Country><![CDATA[Slovenská Republika]]></Country>
+      </ContactAddress>
+      <ContactVoiceTelephone><![CDATA[+421 2 2081 6225]]></ContactVoiceTelephone>
+      <ContactFacsimileTelephone><![CDATA[+421 2 4342 7511]]></ContactFacsimileTelephone>
+      <ContactElectronicMailAddress><![CDATA[gkuzc@skgeodesy.sk]]></ContactElectronicMailAddress>
+    </ContactInformation>
+    <Fees><![CDATA[bez poplatkov]]></Fees>
+    <AccessConstraints><![CDATA[© Úrad geodézie, kartografie a katastra SR]]></AccessConstraints>
+    <MaxWidth>4096</MaxWidth>
+    <MaxHeight>4096</MaxHeight>
+  </Service>
+  <Capability>
+    <Request>
+      <GetCapabilities>
+        <Format>application/vnd.ogc.wms_xml</Format>
+        <Format>text/xml</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?"/></Get></HTTP>
+        </DCPType>
+      </GetCapabilities>
+      <GetMap>
+        <Format>image/bmp</Format>
+        <Format>image/jpeg</Format>
+        <Format>image/tiff</Format>
+        <Format>image/png</Format>
+        <Format>image/png8</Format>
+        <Format>image/png24</Format>
+        <Format>image/png32</Format>
+        <Format>image/gif</Format>
+        <Format>image/svg+xml</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?"/></Get></HTTP>
+        </DCPType>
+      </GetMap>
+      <GetFeatureInfo>
+        <Format>application/vnd.esri.wms_raw_xml</Format>
+        <Format>application/vnd.esri.wms_featureinfo_xml</Format>
+        <Format>application/vnd.ogc.wms_xml</Format>
+        <Format>application/geojson</Format>
+        <Format>text/xml</Format>
+        <Format>text/html</Format>
+        <Format>text/plain</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?"/></Get></HTTP>
+        </DCPType>
+      </GetFeatureInfo>
+      <esri_wms:GetStyles>
+        <Format>application/vnd.ogc.sld+xml</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?"/></Get></HTTP>
+        </DCPType>
+      </esri_wms:GetStyles>
+    </Request>
+    <Exception>
+      <Format>application/vnd.ogc.se_xml</Format>
+      <Format>application/vnd.ogc.se_inimage</Format>
+      <Format>application/vnd.ogc.se_blank</Format>
+      <Format>text/xml</Format>
+      <Format>XML</Format>
+    </Exception>
+    <Layer>
+      <Title><![CDATA[Zobrazovacia služba WMS - Antropogénne prvky]]></Title>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.661701</westBoundLongitude><eastBoundLongitude>22.620033</eastBoundLongitude><southBoundLatitude>47.645856</southBoundLatitude><northBoundLatitude>49.714709</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.661701" miny="47.645856" maxx="22.620033" maxy="49.714709"/>
+<BoundingBox CRS="EPSG:4326" minx="47.645856" miny="16.661701" maxx="49.714709" maxy="22.620033"/>
+<BoundingBox CRS="EPSG:5514" minx="-591311.252500" miny="-1334762.042500" maxx="-165436.880000" maxy="-1132697.422500"/>
+<BoundingBox CRS="EPSG:102067" minx="-591311.252500" miny="-1334762.042500" maxx="-165436.880000" maxy="-1132697.422500"/>
+      <Layer queryable="1">
+        <Title><![CDATA[Referenčné údaje ZBGIS]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.661744</westBoundLongitude><eastBoundLongitude>22.620033</eastBoundLongitude><southBoundLatitude>47.645875</southBoundLatitude><northBoundLatitude>49.714681</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.661744" miny="47.645875" maxx="22.620033" maxy="49.714681"/>
+<BoundingBox CRS="EPSG:4326" minx="47.645875" miny="16.661744" maxx="49.714681" maxy="22.620033"/>
+<BoundingBox CRS="EPSG:5514" minx="-591308.430000" miny="-1334760.160000" maxx="-165436.880000" maxy="-1132700.490000"/>
+<BoundingBox CRS="EPSG:102067" minx="-591308.430000" miny="-1334760.160000" maxx="-165436.880000" maxy="-1132700.490000"/>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      <Layer queryable="1">
+        <Name>1</Name>
+        <Title><![CDATA[Opevnenie, hradba, obranný val]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.964925</westBoundLongitude><eastBoundLongitude>21.319994</eastBoundLongitude><southBoundLatitude>47.693369</southBoundLatitude><northBoundLatitude>49.226028</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.964925" miny="47.693369" maxx="21.319994" maxy="49.226028"/>
+<BoundingBox CRS="EPSG:4326" minx="47.693369" miny="16.964925" maxx="49.226028" maxy="21.319994"/>
+<BoundingBox CRS="EPSG:5514" minx="-574446.650000" miny="-1331171.230000" maxx="-262557.940000" maxy="-1183351.830000"/>
+<BoundingBox CRS="EPSG:102067" minx="-574446.650000" miny="-1331171.230000" maxx="-262557.940000" maxy="-1183351.830000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>1</Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=1" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>9449.404762</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>2</Name>
+        <Title><![CDATA[Tank na uskladnenie kvapalín alebo plynov]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.776418</westBoundLongitude><eastBoundLongitude>22.466750</eastBoundLongitude><southBoundLatitude>47.678822</southBoundLatitude><northBoundLatitude>49.615724</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.776418" miny="47.678822" maxx="22.466750" maxy="49.615724"/>
+<BoundingBox CRS="EPSG:4326" minx="47.678822" miny="16.776418" maxx="49.615724" maxy="22.466750"/>
+<BoundingBox CRS="EPSG:5514" minx="-584077.550000" miny="-1331820.780000" maxx="-176810.670000" maxy="-1143361.700000"/>
+<BoundingBox CRS="EPSG:102067" minx="-584077.550000" miny="-1331820.780000" maxx="-176810.670000" maxy="-1143361.700000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>2</Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=2" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>9449.404762</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>3</Name>
+        <Title><![CDATA[Skládka materiálu]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.713088</westBoundLongitude><eastBoundLongitude>22.585865</eastBoundLongitude><southBoundLatitude>47.660279</southBoundLatitude><northBoundLatitude>49.670138</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.713088" miny="47.660279" maxx="22.585865" maxy="49.670138"/>
+<BoundingBox CRS="EPSG:4326" minx="47.660279" miny="16.713088" maxx="49.670138" maxy="22.585865"/>
+<BoundingBox CRS="EPSG:5514" minx="-588086.080000" miny="-1333482.450000" maxx="-167954.860000" maxy="-1137581.580000"/>
+<BoundingBox CRS="EPSG:102067" minx="-588086.080000" miny="-1333482.450000" maxx="-167954.860000" maxy="-1137581.580000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>3</Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=3" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>9449.404762</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>4</Name>
+        <Title><![CDATA[Obilné silo, sýpka]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.813493</westBoundLongitude><eastBoundLongitude>22.411439</eastBoundLongitude><southBoundLatitude>47.670367</southBoundLatitude><northBoundLatitude>49.648233</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.813493" miny="47.670367" maxx="22.411439" maxy="49.648233"/>
+<BoundingBox CRS="EPSG:4326" minx="47.670367" miny="16.813493" maxx="49.648233" maxy="22.411439"/>
+<BoundingBox CRS="EPSG:5514" minx="-580975.050000" miny="-1333082.020000" maxx="-180985.570000" maxy="-1139609.410000"/>
+<BoundingBox CRS="EPSG:102067" minx="-580975.050000" miny="-1333082.020000" maxx="-180985.570000" maxy="-1139609.410000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>4</Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=4" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>9449.404762</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>5</Name>
+        <Title><![CDATA[Zakryté skladisko]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.675192</westBoundLongitude><eastBoundLongitude>22.433479</eastBoundLongitude><southBoundLatitude>47.662818</southBoundLatitude><northBoundLatitude>49.651731</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.675192" miny="47.662818" maxx="22.433479" maxy="49.651731"/>
+<BoundingBox CRS="EPSG:4326" minx="47.662818" miny="16.675192" maxx="49.651731" maxy="22.433479"/>
+<BoundingBox CRS="EPSG:5514" minx="-591032.550000" miny="-1332894.700000" maxx="-179331.660000" maxy="-1139273.850000"/>
+<BoundingBox CRS="EPSG:102067" minx="-591032.550000" miny="-1332894.700000" maxx="-179331.660000" maxy="-1139273.850000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>5</Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=5" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>9449.404762</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>6</Name>
+        <Title><![CDATA[Stena lomu]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.794009</westBoundLongitude><eastBoundLongitude>22.428145</eastBoundLongitude><southBoundLatitude>47.678330</southBoundLatitude><northBoundLatitude>49.625430</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.794009" miny="47.678330" maxx="22.428145" maxy="49.625430"/>
+<BoundingBox CRS="EPSG:4326" minx="47.678330" miny="16.794009" maxx="49.625430" maxy="22.428145"/>
+<BoundingBox CRS="EPSG:5514" minx="-582669.150000" miny="-1332019.520000" maxx="-179703.060000" maxy="-1142188.750000"/>
+<BoundingBox CRS="EPSG:102067" minx="-582669.150000" miny="-1332019.520000" maxx="-179703.060000" maxy="-1142188.750000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>6</Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=6" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>9449.404762</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>7</Name>
+        <Title><![CDATA[Sedimentačná nádrž]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.689667</westBoundLongitude><eastBoundLongitude>22.302096</eastBoundLongitude><southBoundLatitude>47.666544</southBoundLatitude><northBoundLatitude>49.569252</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.689667" miny="47.666544" maxx="22.302096" maxy="49.569252"/>
+<BoundingBox CRS="EPSG:4326" minx="47.666544" miny="16.689667" maxx="49.569252" maxy="22.302096"/>
+<BoundingBox CRS="EPSG:5514" minx="-590923.210000" miny="-1332489.530000" maxx="-189143.010000" maxy="-1148126.930000"/>
+<BoundingBox CRS="EPSG:102067" minx="-590923.210000" miny="-1332489.530000" maxx="-189143.010000" maxy="-1148126.930000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>7</Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=7" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>9449.404762</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>8</Name>
+        <Title><![CDATA[Parkovisko]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.738098</westBoundLongitude><eastBoundLongitude>22.482603</eastBoundLongitude><southBoundLatitude>47.660192</southBoundLatitude><northBoundLatitude>49.626512</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.738098" miny="47.660192" maxx="22.482603" maxy="49.626512"/>
+<BoundingBox CRS="EPSG:4326" minx="47.660192" miny="16.738098" maxx="49.626512" maxy="22.482603"/>
+<BoundingBox CRS="EPSG:5514" minx="-586752.180000" miny="-1333629.260000" maxx="-175680.960000" maxy="-1142197.080000"/>
+<BoundingBox CRS="EPSG:102067" minx="-586752.180000" miny="-1333629.260000" maxx="-175680.960000" maxy="-1142197.080000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>8</Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=8" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>9449.404762</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>9</Name>
+        <Title><![CDATA[Amfiteáter]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.858078</westBoundLongitude><eastBoundLongitude>22.124609</eastBoundLongitude><southBoundLatitude>47.673818</southBoundLatitude><northBoundLatitude>49.615047</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.858078" miny="47.673818" maxx="22.124609" maxy="49.615047"/>
+<BoundingBox CRS="EPSG:4326" minx="47.673818" miny="16.858078" maxx="49.615047" maxy="22.124609"/>
+<BoundingBox CRS="EPSG:5514" minx="-578031.090000" miny="-1332994.780000" maxx="-202434.050000" maxy="-1142561.430000"/>
+<BoundingBox CRS="EPSG:102067" minx="-578031.090000" miny="-1332994.780000" maxx="-202434.050000" maxy="-1142561.430000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>9</Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=9" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>9449.404762</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>10</Name>
+        <Title><![CDATA[Tribúna]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.700838</westBoundLongitude><eastBoundLongitude>22.473220</eastBoundLongitude><southBoundLatitude>47.661926</southBoundLatitude><northBoundLatitude>49.633182</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.700838" miny="47.661926" maxx="22.473220" maxy="49.633182"/>
+<BoundingBox CRS="EPSG:4326" minx="47.661926" miny="16.700838" maxx="49.633182" maxy="22.473220"/>
+<BoundingBox CRS="EPSG:5514" minx="-589391.380000" miny="-1333163.900000" maxx="-176368.290000" maxy="-1141433.090000"/>
+<BoundingBox CRS="EPSG:102067" minx="-589391.380000" miny="-1333163.900000" maxx="-176368.290000" maxy="-1141433.090000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>10</Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=10" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>9449.404762</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>11</Name>
+        <Title><![CDATA[Tenisový kurt]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.732539</westBoundLongitude><eastBoundLongitude>22.292839</eastBoundLongitude><southBoundLatitude>47.664808</southBoundLatitude><northBoundLatitude>49.620488</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.732539" miny="47.664808" maxx="22.292839" maxy="49.620488"/>
+<BoundingBox CRS="EPSG:4326" minx="47.664808" miny="16.732539" maxx="49.620488" maxy="22.292839"/>
+<BoundingBox CRS="EPSG:5514" minx="-587179.720000" miny="-1333069.320000" maxx="-189854.440000" maxy="-1142400.610000"/>
+<BoundingBox CRS="EPSG:102067" minx="-587179.720000" miny="-1333069.320000" maxx="-189854.440000" maxy="-1142400.610000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>11</Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=11" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>9449.404762</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>12</Name>
+        <Title><![CDATA[Ihrisko]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.699040</westBoundLongitude><eastBoundLongitude>22.560290</eastBoundLongitude><southBoundLatitude>47.659952</southBoundLatitude><northBoundLatitude>49.641553</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.699040" miny="47.659952" maxx="22.560290" maxy="49.641553"/>
+<BoundingBox CRS="EPSG:4326" minx="47.659952" miny="16.699040" maxx="49.641553" maxy="22.560290"/>
+<BoundingBox CRS="EPSG:5514" minx="-589444.770000" miny="-1333379.090000" maxx="-169864.120000" maxy="-1140704.450000"/>
+<BoundingBox CRS="EPSG:102067" minx="-589444.770000" miny="-1333379.090000" maxx="-169864.120000" maxy="-1140704.450000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>12</Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=12" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>9449.404762</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>13</Name>
+        <Title><![CDATA[Bazén, požiarna nádrž]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.682565</westBoundLongitude><eastBoundLongitude>22.344642</eastBoundLongitude><southBoundLatitude>47.658803</southBoundLatitude><northBoundLatitude>49.628702</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.682565" miny="47.658803" maxx="22.344642" maxy="49.628702"/>
+<BoundingBox CRS="EPSG:4326" minx="47.658803" miny="16.682565" maxx="49.628702" maxy="22.344642"/>
+<BoundingBox CRS="EPSG:5514" minx="-590745.360000" miny="-1333373.210000" maxx="-185990.210000" maxy="-1141617.410000"/>
+<BoundingBox CRS="EPSG:102067" minx="-590745.360000" miny="-1333373.210000" maxx="-185990.210000" maxy="-1141617.410000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>13</Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=13" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>4724.702381</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>14</Name>
+        <Title><![CDATA[Vodojem]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.773781</westBoundLongitude><eastBoundLongitude>22.483852</eastBoundLongitude><southBoundLatitude>47.676187</southBoundLatitude><northBoundLatitude>49.642078</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.773781" miny="47.676187" maxx="22.483852" maxy="49.642078"/>
+<BoundingBox CRS="EPSG:4326" minx="47.676187" miny="16.773781" maxx="49.642078" maxy="22.483852"/>
+<BoundingBox CRS="EPSG:5514" minx="-583963.890000" miny="-1332126.920000" maxx="-175541.530000" maxy="-1140469.250000"/>
+<BoundingBox CRS="EPSG:102067" minx="-583963.890000" miny="-1332126.920000" maxx="-175541.530000" maxy="-1140469.250000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>14</Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=14" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>4724.702381</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>15</Name>
+        <Title><![CDATA[Sídla (plocha)]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.668480</westBoundLongitude><eastBoundLongitude>22.572909</eastBoundLongitude><southBoundLatitude>47.652509</southBoundLatitude><northBoundLatitude>49.686820</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.668480" miny="47.652509" maxx="22.572909" maxy="49.686820"/>
+<BoundingBox CRS="EPSG:4326" minx="47.652509" miny="16.668480" maxx="49.686820" maxy="22.572909"/>
+<BoundingBox CRS="EPSG:5514" minx="-591138.600400" miny="-1334036.127000" maxx="-168939.939000" maxy="-1135695.282000"/>
+<BoundingBox CRS="EPSG:102067" minx="-591138.600400" miny="-1334036.127000" maxx="-168939.939000" maxy="-1135695.282000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>15</Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=15" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MinScaleDenominator>9450.349702</MinScaleDenominator>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>16</Name>
+        <Title><![CDATA[Plot]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.661744</westBoundLongitude><eastBoundLongitude>22.620033</eastBoundLongitude><southBoundLatitude>47.645875</southBoundLatitude><northBoundLatitude>49.714681</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.661744" miny="47.645875" maxx="22.620033" maxy="49.714681"/>
+<BoundingBox CRS="EPSG:4326" minx="47.645875" miny="16.661744" maxx="49.714681" maxy="22.620033"/>
+<BoundingBox CRS="EPSG:5514" minx="-591308.430000" miny="-1334760.160000" maxx="-165436.880000" maxy="-1132700.490000"/>
+<BoundingBox CRS="EPSG:102067" minx="-591308.430000" miny="-1334760.160000" maxx="-165436.880000" maxy="-1132700.490000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>16</Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=16" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>4724.702381</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>17</Name>
+        <Title><![CDATA[Zrub, chatrč, búda]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.692498</westBoundLongitude><eastBoundLongitude>22.541513</eastBoundLongitude><southBoundLatitude>47.697915</southBoundLatitude><northBoundLatitude>49.652516</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.692498" miny="47.697915" maxx="22.541513" maxy="49.652516"/>
+<BoundingBox CRS="EPSG:4326" minx="47.697915" miny="16.692498" maxx="49.652516" maxy="22.541513"/>
+<BoundingBox CRS="EPSG:5514" minx="-589787.690000" miny="-1329099.990000" maxx="-171140.410000" maxy="-1139445.250000"/>
+<BoundingBox CRS="EPSG:102067" minx="-589787.690000" miny="-1329099.990000" maxx="-171140.410000" maxy="-1139445.250000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>17</Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=17" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>9449.404762</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>18</Name>
+        <Title><![CDATA[Budova]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.666085</westBoundLongitude><eastBoundLongitude>22.594934</eastBoundLongitude><southBoundLatitude>47.651768</southBoundLatitude><northBoundLatitude>49.699516</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.666085" miny="47.651768" maxx="22.594934" maxy="49.699516"/>
+<BoundingBox CRS="EPSG:4326" minx="47.651768" miny="16.666085" maxx="49.699516" maxy="22.594934"/>
+<BoundingBox CRS="EPSG:5514" minx="-591167.080000" miny="-1334116.090000" maxx="-167295.230000" maxy="-1134332.360000"/>
+<BoundingBox CRS="EPSG:102067" minx="-591167.080000" miny="-1334116.090000" maxx="-167295.230000" maxy="-1134332.360000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>18</Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=18" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>9449.404762</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>19</Name>
+        <Title><![CDATA[Most]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.711200</westBoundLongitude><eastBoundLongitude>22.571428</eastBoundLongitude><southBoundLatitude>47.658342</southBoundLatitude><northBoundLatitude>49.699256</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.711200" miny="47.658342" maxx="22.571428" maxy="49.699256"/>
+<BoundingBox CRS="EPSG:4326" minx="47.658342" miny="16.711200" maxx="49.699256" maxy="22.571428"/>
+<BoundingBox CRS="EPSG:5514" minx="-587874.590000" miny="-1333720.660000" maxx="-169041.340000" maxy="-1134308.230000"/>
+<BoundingBox CRS="EPSG:102067" minx="-587874.590000" miny="-1333720.660000" maxx="-169041.340000" maxy="-1134308.230000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>19</Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=19" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>9449.404762</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>20</Name>
+        <Title><![CDATA[Dostihová a iné dráhy]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.819782</westBoundLongitude><eastBoundLongitude>21.737798</eastBoundLongitude><southBoundLatitude>47.941453</southBoundLatitude><northBoundLatitude>49.578366</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.819782" miny="47.941453" maxx="21.737798" maxy="49.578366"/>
+<BoundingBox CRS="EPSG:4326" minx="47.941453" miny="16.819782" maxx="49.578366" maxy="21.737798"/>
+<BoundingBox CRS="EPSG:5514" minx="-581142.790000" miny="-1302766.730000" maxx="-230151.850000" maxy="-1145563.880000"/>
+<BoundingBox CRS="EPSG:102067" minx="-581142.790000" miny="-1302766.730000" maxx="-230151.850000" maxy="-1145563.880000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>20</Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=20" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>4724.702381</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>21</Name>
+        <Title><![CDATA[Opevnenie, hradba, obranný val]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.815084</westBoundLongitude><eastBoundLongitude>22.050597</eastBoundLongitude><southBoundLatitude>47.671300</southBoundLatitude><northBoundLatitude>49.447718</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.815084" miny="47.671300" maxx="22.050597" maxy="49.447718"/>
+<BoundingBox CRS="EPSG:4326" minx="47.671300" miny="16.815084" maxx="49.447718" maxy="22.050597"/>
+<BoundingBox CRS="EPSG:5514" minx="-583109.540000" miny="-1332760.370000" maxx="-207961.600000" maxy="-1160980.280000"/>
+<BoundingBox CRS="EPSG:102067" minx="-583109.540000" miny="-1332760.370000" maxx="-207961.600000" maxy="-1160980.280000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>21</Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=21" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>7087.053571</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>22</Name>
+        <Title><![CDATA[Lesná, poľná cesta]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.662705</westBoundLongitude><eastBoundLongitude>22.604328</eastBoundLongitude><southBoundLatitude>47.650077</southBoundLatitude><northBoundLatitude>49.713947</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.662705" miny="47.650077" maxx="22.604328" maxy="49.713947"/>
+<BoundingBox CRS="EPSG:4326" minx="47.650077" miny="16.662705" maxx="49.713947" maxy="22.604328"/>
+<BoundingBox CRS="EPSG:5514" minx="-591243.380000" miny="-1334297.140000" maxx="-166597.980000" maxy="-1132747.440000"/>
+<BoundingBox CRS="EPSG:102067" minx="-591243.380000" miny="-1334297.140000" maxx="-166597.980000" maxy="-1132747.440000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>22</Title>
+          <LegendURL width="126" height="36">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=22" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>9449.404762</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>23</Name>
+        <Title><![CDATA[Ulica, Miestna komunikácia, Privádzač]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.662705</westBoundLongitude><eastBoundLongitude>22.604328</eastBoundLongitude><southBoundLatitude>47.650077</southBoundLatitude><northBoundLatitude>49.713947</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.662705" miny="47.650077" maxx="22.604328" maxy="49.713947"/>
+<BoundingBox CRS="EPSG:4326" minx="47.650077" miny="16.662705" maxx="49.713947" maxy="22.604328"/>
+<BoundingBox CRS="EPSG:5514" minx="-591243.380000" miny="-1334297.140000" maxx="-166597.980000" maxy="-1132747.440000"/>
+<BoundingBox CRS="EPSG:102067" minx="-591243.380000" miny="-1334297.140000" maxx="-166597.980000" maxy="-1132747.440000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>23</Title>
+          <LegendURL width="186" height="72">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=23" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>9449.404762</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>24</Name>
+        <Title><![CDATA[Železnica - Vlečka; vedľajšia trať]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.680712</westBoundLongitude><eastBoundLongitude>22.278461</eastBoundLongitude><southBoundLatitude>47.668871</southBoundLatitude><northBoundLatitude>49.634070</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.680712" miny="47.668871" maxx="22.278461" maxy="49.634070"/>
+<BoundingBox CRS="EPSG:4326" minx="47.668871" miny="16.680712" maxx="49.634070" maxy="22.278461"/>
+<BoundingBox CRS="EPSG:5514" minx="-590798.770000" miny="-1332242.240000" maxx="-190902.180000" maxy="-1140853.130000"/>
+<BoundingBox CRS="EPSG:102067" minx="-590798.770000" miny="-1332242.240000" maxx="-190902.180000" maxy="-1140853.130000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>24</Title>
+          <LegendURL width="150" height="36">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=24" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>11811.755952</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>25</Name>
+        <Title><![CDATA[Železnica - Hlavná trať, linka]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.680712</westBoundLongitude><eastBoundLongitude>22.278461</eastBoundLongitude><southBoundLatitude>47.668871</southBoundLatitude><northBoundLatitude>49.634070</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.680712" miny="47.668871" maxx="22.278461" maxy="49.634070"/>
+<BoundingBox CRS="EPSG:4326" minx="47.668871" miny="16.680712" maxx="49.634070" maxy="22.278461"/>
+<BoundingBox CRS="EPSG:5514" minx="-590798.770000" miny="-1332242.240000" maxx="-190902.180000" maxy="-1140853.130000"/>
+<BoundingBox CRS="EPSG:102067" minx="-590798.770000" miny="-1332242.240000" maxx="-190902.180000" maxy="-1140853.130000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>25</Title>
+          <LegendURL width="150" height="36">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=25" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>26</Name>
+        <Title><![CDATA[Cesta 1, 2 a 3 triedy]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.662705</westBoundLongitude><eastBoundLongitude>22.604328</eastBoundLongitude><southBoundLatitude>47.650077</southBoundLatitude><northBoundLatitude>49.713947</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.662705" miny="47.650077" maxx="22.604328" maxy="49.713947"/>
+<BoundingBox CRS="EPSG:4326" minx="47.650077" miny="16.662705" maxx="49.713947" maxy="22.604328"/>
+<BoundingBox CRS="EPSG:5514" minx="-591243.380000" miny="-1334297.140000" maxx="-166597.980000" maxy="-1132747.440000"/>
+<BoundingBox CRS="EPSG:102067" minx="-591243.380000" miny="-1334297.140000" maxx="-166597.980000" maxy="-1132747.440000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>26</Title>
+          <LegendURL width="102" height="72">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=26" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>27</Name>
+        <Title><![CDATA[Diaľnica,Rýchlostná cesta]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.662705</westBoundLongitude><eastBoundLongitude>22.604328</eastBoundLongitude><southBoundLatitude>47.650077</southBoundLatitude><northBoundLatitude>49.713947</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.662705" miny="47.650077" maxx="22.604328" maxy="49.713947"/>
+<BoundingBox CRS="EPSG:4326" minx="47.650077" miny="16.662705" maxx="49.713947" maxy="22.604328"/>
+<BoundingBox CRS="EPSG:5514" minx="-591243.380000" miny="-1334297.140000" maxx="-166597.980000" maxy="-1132747.440000"/>
+<BoundingBox CRS="EPSG:102067" minx="-591243.380000" miny="-1334297.140000" maxx="-166597.980000" maxy="-1132747.440000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>27</Title>
+          <LegendURL width="114" height="54">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=27" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>28</Name>
+        <Title><![CDATA[Lanovka, vlek]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.804816</westBoundLongitude><eastBoundLongitude>22.453549</eastBoundLongitude><southBoundLatitude>48.174479</southBoundLatitude><northBoundLatitude>49.626456</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.804816" miny="48.174479" maxx="22.453549" maxy="49.626456"/>
+<BoundingBox CRS="EPSG:4326" minx="48.174479" miny="16.804816" maxx="49.626456" maxy="22.453549"/>
+<BoundingBox CRS="EPSG:5514" minx="-581880.360000" miny="-1276646.000000" maxx="-176086.580000" maxy="-1142190.470000"/>
+<BoundingBox CRS="EPSG:102067" minx="-581880.360000" miny="-1276646.000000" maxx="-176086.580000" maxy="-1142190.470000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>28</Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=28" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>29</Name>
+        <Title><![CDATA[Chodník pre peších]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.743337</westBoundLongitude><eastBoundLongitude>22.563092</eastBoundLongitude><southBoundLatitude>47.654854</southBoundLatitude><northBoundLatitude>49.637468</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.743337" miny="47.654854" maxx="22.563092" maxy="49.637468"/>
+<BoundingBox CRS="EPSG:4326" minx="47.654854" miny="16.743337" maxx="49.637468" maxy="22.563092"/>
+<BoundingBox CRS="EPSG:5514" minx="-586259.930000" miny="-1334276.380000" maxx="-169681.160000" maxy="-1141164.600000"/>
+<BoundingBox CRS="EPSG:102067" minx="-586259.930000" miny="-1334276.380000" maxx="-169681.160000" maxy="-1141164.600000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>29</Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=29" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>9449.404762</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>30</Name>
+        <Title><![CDATA[Elektrické vedenie]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.676602</westBoundLongitude><eastBoundLongitude>22.568859</eastBoundLongitude><southBoundLatitude>47.653519</southBoundLatitude><northBoundLatitude>49.655391</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.676602" miny="47.653519" maxx="22.568859" maxy="49.655391"/>
+<BoundingBox CRS="EPSG:4326" minx="47.653519" miny="16.676602" maxx="49.655391" maxy="22.568859"/>
+<BoundingBox CRS="EPSG:5514" minx="-590919.990000" miny="-1333945.800000" maxx="-169240.110000" maxy="-1139183.640000"/>
+<BoundingBox CRS="EPSG:102067" minx="-590919.990000" miny="-1333945.800000" maxx="-169240.110000" maxy="-1139183.640000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>30</Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=30" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>9449.404762</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>31</Name>
+        <Title><![CDATA[Elektrické vedenie]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.676602</westBoundLongitude><eastBoundLongitude>22.568859</eastBoundLongitude><southBoundLatitude>47.653519</southBoundLatitude><northBoundLatitude>49.655391</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.676602" miny="47.653519" maxx="22.568859" maxy="49.655391"/>
+<BoundingBox CRS="EPSG:4326" minx="47.653519" miny="16.676602" maxx="49.655391" maxy="22.568859"/>
+<BoundingBox CRS="EPSG:5514" minx="-590919.990000" miny="-1333945.800000" maxx="-169240.110000" maxy="-1139183.640000"/>
+<BoundingBox CRS="EPSG:102067" minx="-590919.990000" miny="-1333945.800000" maxx="-169240.110000" maxy="-1139183.640000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>31</Title>
+          <LegendURL width="150" height="36">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=31" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MinScaleDenominator>9450.349702</MinScaleDenominator>
+        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>32</Name>
+        <Title><![CDATA[Železničné priecestie]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.681947</westBoundLongitude><eastBoundLongitude>22.270917</eastBoundLongitude><southBoundLatitude>47.668975</southBoundLatitude><northBoundLatitude>49.633787</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.681947" miny="47.668975" maxx="22.270917" maxy="49.633787"/>
+<BoundingBox CRS="EPSG:4326" minx="47.668975" miny="16.681947" maxx="49.633787" maxy="22.270917"/>
+<BoundingBox CRS="EPSG:5514" minx="-590709.880000" miny="-1332239.790000" maxx="-191466.180000" maxy="-1140865.130000"/>
+<BoundingBox CRS="EPSG:102067" minx="-590709.880000" miny="-1332239.790000" maxx="-191466.180000" maxy="-1140865.130000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>32</Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=32" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>7087.053571</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>33</Name>
+        <Title><![CDATA[Brána, závora]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.674038</westBoundLongitude><eastBoundLongitude>22.550897</eastBoundLongitude><southBoundLatitude>47.656569</southBoundLatitude><northBoundLatitude>49.658902</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.674038" miny="47.656569" maxx="22.550897" maxy="49.658902"/>
+<BoundingBox CRS="EPSG:4326" minx="47.656569" miny="16.674038" maxx="49.658902" maxy="22.550897"/>
+<BoundingBox CRS="EPSG:5514" minx="-591060.850000" miny="-1333590.290000" maxx="-170572.770000" maxy="-1138752.090000"/>
+<BoundingBox CRS="EPSG:102067" minx="-591060.850000" miny="-1333590.290000" maxx="-170572.770000" maxy="-1138752.090000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>33</Title>
+          <LegendURL width="31" height="31">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=33" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>4724.702381</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>34</Name>
+        <Title><![CDATA[Vodojem]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.788446</westBoundLongitude><eastBoundLongitude>22.374276</eastBoundLongitude><southBoundLatitude>47.666108</southBoundLatitude><northBoundLatitude>49.618830</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.788446" miny="47.666108" maxx="22.374276" maxy="49.618830"/>
+<BoundingBox CRS="EPSG:4326" minx="47.666108" miny="16.788446" maxx="49.618830" maxy="22.374276"/>
+<BoundingBox CRS="EPSG:5514" minx="-583138.780000" miny="-1333337.690000" maxx="-183772.860000" maxy="-1142789.870000"/>
+<BoundingBox CRS="EPSG:102067" minx="-583138.780000" miny="-1333337.690000" maxx="-183772.860000" maxy="-1142789.870000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>34</Title>
+          <LegendURL width="25" height="25">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=34" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>4724.702381</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>35</Name>
+        <Title><![CDATA[Veža]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.680756</westBoundLongitude><eastBoundLongitude>22.589617</eastBoundLongitude><southBoundLatitude>47.657288</southBoundLatitude><northBoundLatitude>49.639103</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.680756" miny="47.657288" maxx="22.589617" maxy="49.639103"/>
+<BoundingBox CRS="EPSG:4326" minx="47.657288" miny="16.680756" maxx="49.639103" maxy="22.589617"/>
+<BoundingBox CRS="EPSG:5514" minx="-590815.940000" miny="-1333535.240000" maxx="-167675.800000" maxy="-1141043.630000"/>
+<BoundingBox CRS="EPSG:102067" minx="-590815.940000" miny="-1333535.240000" maxx="-167675.800000" maxy="-1141043.630000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>35</Title>
+          <LegendURL width="222" height="190">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=35" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>7559.523810</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>36</Name>
+        <Title><![CDATA[Studňa]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.704521</westBoundLongitude><eastBoundLongitude>22.178714</eastBoundLongitude><southBoundLatitude>47.703516</southBoundLatitude><northBoundLatitude>49.623182</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.704521" miny="47.703516" maxx="22.178714" maxy="49.623182"/>
+<BoundingBox CRS="EPSG:4326" minx="47.703516" miny="16.704521" maxx="49.623182" maxy="22.178714"/>
+<BoundingBox CRS="EPSG:5514" minx="-589162.470000" miny="-1328538.440000" maxx="-198233.070000" maxy="-1141807.810000"/>
+<BoundingBox CRS="EPSG:102067" minx="-589162.470000" miny="-1328538.440000" maxx="-198233.070000" maxy="-1141807.810000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>36</Title>
+          <LegendURL width="30" height="30">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=36" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>4724.702381</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>37</Name>
+        <Title><![CDATA[Transformátor]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.676689</westBoundLongitude><eastBoundLongitude>22.568859</eastBoundLongitude><southBoundLatitude>47.653519</southBoundLatitude><northBoundLatitude>49.654853</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.676689" miny="47.653519" maxx="22.568859" maxy="49.654853"/>
+<BoundingBox CRS="EPSG:4326" minx="47.653519" miny="16.676689" maxx="49.654853" maxy="22.568859"/>
+<BoundingBox CRS="EPSG:5514" minx="-590919.990000" miny="-1333945.800000" maxx="-169240.110000" maxy="-1139243.530000"/>
+<BoundingBox CRS="EPSG:102067" minx="-590919.990000" miny="-1333945.800000" maxx="-169240.110000" maxy="-1139243.530000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>37</Title>
+          <LegendURL width="28" height="31">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=37" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>4724.702381</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>38</Name>
+        <Title><![CDATA[Stĺp lanovky]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.817635</westBoundLongitude><eastBoundLongitude>21.333488</eastBoundLongitude><southBoundLatitude>48.174496</southBoundLatitude><northBoundLatitude>49.518983</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.817635" miny="48.174496" maxx="21.333488" maxy="49.518983"/>
+<BoundingBox CRS="EPSG:4326" minx="48.174496" miny="16.817635" maxx="49.518983" maxy="21.333488"/>
+<BoundingBox CRS="EPSG:5514" minx="-581861.550000" miny="-1276646.000000" maxx="-259059.340000" maxy="-1150901.090000"/>
+<BoundingBox CRS="EPSG:102067" minx="-581861.550000" miny="-1276646.000000" maxx="-259059.340000" maxy="-1150901.090000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>38</Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=38" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>4724.702381</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>39</Name>
+        <Title><![CDATA[Stĺp, stožiar elektrického vedenia]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.676720</westBoundLongitude><eastBoundLongitude>22.567907</eastBoundLongitude><southBoundLatitude>47.653634</southBoundLatitude><northBoundLatitude>49.655371</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.676720" miny="47.653634" maxx="22.567907" maxy="49.655371"/>
+<BoundingBox CRS="EPSG:4326" minx="47.653634" miny="16.676720" maxx="49.655371" maxy="22.567907"/>
+<BoundingBox CRS="EPSG:5514" minx="-590911.330000" miny="-1333933.890000" maxx="-169310.930000" maxy="-1139183.640000"/>
+<BoundingBox CRS="EPSG:102067" minx="-590911.330000" miny="-1333933.890000" maxx="-169310.930000" maxy="-1139183.640000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>39</Title>
+          <LegendURL width="252" height="54">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=39" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>9449.404762</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>40</Name>
+        <Title><![CDATA[Priepust]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.664215</westBoundLongitude><eastBoundLongitude>22.602212</eastBoundLongitude><southBoundLatitude>47.652169</southBoundLatitude><northBoundLatitude>49.710358</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.664215" miny="47.652169" maxx="22.602212" maxy="49.710358"/>
+<BoundingBox CRS="EPSG:4326" minx="47.652169" miny="16.664215" maxx="49.710358" maxy="22.602212"/>
+<BoundingBox CRS="EPSG:5514" minx="-591175.690000" miny="-1334070.300000" maxx="-166749.590000" maxy="-1133142.240000"/>
+<BoundingBox CRS="EPSG:102067" minx="-591175.690000" miny="-1334070.300000" maxx="-166749.590000" maxy="-1133142.240000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>40</Title>
+          <LegendURL width="24" height="24">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=40" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>7087.053571</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>41</Name>
+        <Title><![CDATA[Pomník]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.690096</westBoundLongitude><eastBoundLongitude>22.440255</eastBoundLongitude><southBoundLatitude>47.655748</southBoundLatitude><northBoundLatitude>49.666567</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.690096" miny="47.655748" maxx="22.440255" maxy="49.666567"/>
+<BoundingBox CRS="EPSG:4326" minx="47.655748" miny="16.690096" maxx="49.666567" maxy="22.440255"/>
+<BoundingBox CRS="EPSG:5514" minx="-589769.690000" miny="-1333815.490000" maxx="-178853.660000" maxy="-1137638.210000"/>
+<BoundingBox CRS="EPSG:102067" minx="-589769.690000" miny="-1333815.490000" maxx="-178853.660000" maxy="-1137638.210000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>41</Title>
+          <LegendURL width="30" height="29">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=41" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>9449.404762</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>42</Name>
+        <Title><![CDATA[Komín]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.681504</westBoundLongitude><eastBoundLongitude>22.484076</eastBoundLongitude><southBoundLatitude>47.655618</southBoundLatitude><northBoundLatitude>49.611246</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.681504" miny="47.655618" maxx="22.484076" maxy="49.611246"/>
+<BoundingBox CRS="EPSG:4326" minx="47.655618" miny="16.681504" maxx="49.611246" maxy="22.484076"/>
+<BoundingBox CRS="EPSG:5514" minx="-591067.210000" miny="-1333695.990000" maxx="-175572.800000" maxy="-1143899.300000"/>
+<BoundingBox CRS="EPSG:102067" minx="-591067.210000" miny="-1333695.990000" maxx="-175572.800000" maxy="-1143899.300000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>42</Title>
+          <LegendURL width="18" height="19">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=42" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>7559.523810</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>43</Name>
+        <Title><![CDATA[Božie muky, kríž]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.680772</westBoundLongitude><eastBoundLongitude>22.571864</eastBoundLongitude><southBoundLatitude>47.658529</southBoundLatitude><northBoundLatitude>49.658727</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.680772" miny="47.658529" maxx="22.571864" maxy="49.658727"/>
+<BoundingBox CRS="EPSG:4326" minx="47.658529" miny="16.680772" maxx="49.658727" maxy="22.571864"/>
+<BoundingBox CRS="EPSG:5514" minx="-590576.590000" miny="-1333421.300000" maxx="-168999.970000" maxy="-1138819.750000"/>
+<BoundingBox CRS="EPSG:102067" minx="-590576.590000" miny="-1333421.300000" maxx="-168999.970000" maxy="-1138819.750000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>43</Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=43" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>9449.404762</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>44</Name>
+        <Title><![CDATA[Atrakcia v zábavnom parku, aquaparku]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.909208</westBoundLongitude><eastBoundLongitude>21.966670</eastBoundLongitude><southBoundLatitude>47.673117</southBoundLatitude><northBoundLatitude>49.333738</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.909208" miny="47.673117" maxx="21.966670" maxy="49.333738"/>
+<BoundingBox CRS="EPSG:4326" minx="47.673117" miny="16.909208" maxx="49.333738" maxy="21.966670"/>
+<BoundingBox CRS="EPSG:5514" minx="-577510.640000" miny="-1333125.690000" maxx="-214253.180000" maxy="-1173426.870000"/>
+<BoundingBox CRS="EPSG:102067" minx="-577510.640000" miny="-1333125.690000" maxx="-214253.180000" maxy="-1173426.870000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>44</Title>
+          <LegendURL width="51" height="51">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=44" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>9449.404762</MaxScaleDenominator>
+      </Layer>
+      </Layer>
+      <Layer queryable="1">
+        <Title><![CDATA[Generalizované údaje ZBGIS]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.667833</westBoundLongitude><eastBoundLongitude>22.572989</eastBoundLongitude><southBoundLatitude>47.652466</southBoundLatitude><northBoundLatitude>49.686822</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.667833" miny="47.652466" maxx="22.572989" maxy="49.686822"/>
+<BoundingBox CRS="EPSG:4326" minx="47.652466" miny="16.667833" maxx="49.686822" maxy="22.572989"/>
+<BoundingBox CRS="EPSG:5514" minx="-591185.812600" miny="-1334036.127000" maxx="-168933.948900" maxy="-1135695.282000"/>
+<BoundingBox CRS="EPSG:102067" minx="-591185.812600" miny="-1334036.127000" maxx="-168933.948900" maxy="-1135695.282000"/>
+        <MinScaleDenominator>23624.456845</MinScaleDenominator>
+      <Layer queryable="1">
+        <Name>46</Name>
+        <Title><![CDATA[Sídla]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.668480</westBoundLongitude><eastBoundLongitude>22.572989</eastBoundLongitude><southBoundLatitude>47.652509</southBoundLatitude><northBoundLatitude>49.686822</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.668480" miny="47.652509" maxx="22.572989" maxy="49.686822"/>
+<BoundingBox CRS="EPSG:4326" minx="47.652509" miny="16.668480" maxx="49.686822" maxy="22.572989"/>
+<BoundingBox CRS="EPSG:5514" minx="-591138.600400" miny="-1334036.127000" maxx="-168933.948900" maxy="-1135695.282000"/>
+<BoundingBox CRS="EPSG:102067" minx="-591138.600400" miny="-1334036.127000" maxx="-168933.948900" maxy="-1135695.282000"/>
+        <Style>
+          <Name>default</Name>
+          <Title>46</Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=46" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MinScaleDenominator>23624.456845</MinScaleDenominator>
+        <MaxScaleDenominator>94494.047619</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>47</Name>
+        <Title><![CDATA[Sídla, významné]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.789507</westBoundLongitude><eastBoundLongitude>22.245053</eastBoundLongitude><southBoundLatitude>47.680942</southBoundLatitude><northBoundLatitude>49.592873</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.789507" miny="47.680942" maxx="22.245053" maxy="49.592873"/>
+<BoundingBox CRS="EPSG:4326" minx="47.680942" miny="16.789507" maxx="49.592873" maxy="22.245053"/>
+<BoundingBox CRS="EPSG:5514" minx="-583332.037700" miny="-1331660.009700" maxx="-193380.726500" maxy="-1145352.198200"/>
+<BoundingBox CRS="EPSG:102067" minx="-583332.037700" miny="-1331660.009700" maxx="-193380.726500" maxy="-1145352.198200"/>
+        <Style>
+          <Name>default</Name>
+          <Title>47</Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=47" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MinScaleDenominator>94494.992560</MinScaleDenominator>
+        <MaxScaleDenominator>1417410.714286</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>48</Name>
+        <Title><![CDATA[Železnica]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.675724</westBoundLongitude><eastBoundLongitude>22.277434</eastBoundLongitude><southBoundLatitude>47.680976</southBoundLatitude><northBoundLatitude>49.634061</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.675724" miny="47.680976" maxx="22.277434" maxy="49.634061"/>
+<BoundingBox CRS="EPSG:4326" minx="47.680976" miny="16.675724" maxx="49.634061" maxy="22.277434"/>
+<BoundingBox CRS="EPSG:5514" minx="-591163.000900" miny="-1330851.384500" maxx="-190932.597500" maxy="-1140853.125100"/>
+<BoundingBox CRS="EPSG:102067" minx="-591163.000900" miny="-1330851.384500" maxx="-190932.597500" maxy="-1140853.125100"/>
+        <Style>
+          <Name>default</Name>
+          <Title>48</Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=48" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MinScaleDenominator>23624.456845</MinScaleDenominator>
+        <MaxScaleDenominator>472470.238095</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>49</Name>
+        <Title><![CDATA[Cesta 3 triedy]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.674003</westBoundLongitude><eastBoundLongitude>22.565541</eastBoundLongitude><southBoundLatitude>47.653510</southBoundLatitude><northBoundLatitude>49.648937</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.674003" miny="47.653510" maxx="22.565541" maxy="49.648937"/>
+<BoundingBox CRS="EPSG:4326" minx="47.653510" miny="16.674003" maxx="49.648937" maxy="22.565541"/>
+<BoundingBox CRS="EPSG:5514" minx="-591185.812600" miny="-1333919.374500" maxx="-169487.437500" maxy="-1139894.250500"/>
+<BoundingBox CRS="EPSG:102067" minx="-591185.812600" miny="-1333919.374500" maxx="-169487.437500" maxy="-1139894.250500"/>
+        <Style>
+          <Name>default</Name>
+          <Title>49</Title>
+          <LegendURL width="108" height="36">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=49" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MinScaleDenominator>23624.456845</MinScaleDenominator>
+        <MaxScaleDenominator>236235.119048</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>50</Name>
+        <Title><![CDATA[Cesta 2 triedy]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.674003</westBoundLongitude><eastBoundLongitude>22.565541</eastBoundLongitude><southBoundLatitude>47.653510</southBoundLatitude><northBoundLatitude>49.648937</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.674003" miny="47.653510" maxx="22.565541" maxy="49.648937"/>
+<BoundingBox CRS="EPSG:4326" minx="47.653510" miny="16.674003" maxx="49.648937" maxy="22.565541"/>
+<BoundingBox CRS="EPSG:5514" minx="-591185.812600" miny="-1333919.374500" maxx="-169487.437500" maxy="-1139894.250500"/>
+<BoundingBox CRS="EPSG:102067" minx="-591185.812600" miny="-1333919.374500" maxx="-169487.437500" maxy="-1139894.250500"/>
+        <Style>
+          <Name>default</Name>
+          <Title>50</Title>
+          <LegendURL width="102" height="36">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=50" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MinScaleDenominator>23624.456845</MinScaleDenominator>
+        <MaxScaleDenominator>472470.238095</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>51</Name>
+        <Title><![CDATA[Cesta 1 triedy]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.674003</westBoundLongitude><eastBoundLongitude>22.565541</eastBoundLongitude><southBoundLatitude>47.653510</southBoundLatitude><northBoundLatitude>49.648937</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.674003" miny="47.653510" maxx="22.565541" maxy="49.648937"/>
+<BoundingBox CRS="EPSG:4326" minx="47.653510" miny="16.674003" maxx="49.648937" maxy="22.565541"/>
+<BoundingBox CRS="EPSG:5514" minx="-591185.812600" miny="-1333919.374500" maxx="-169487.437500" maxy="-1139894.250500"/>
+<BoundingBox CRS="EPSG:102067" minx="-591185.812600" miny="-1333919.374500" maxx="-169487.437500" maxy="-1139894.250500"/>
+        <Style>
+          <Name>default</Name>
+          <Title>51</Title>
+          <LegendURL width="102" height="36">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=51" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MinScaleDenominator>23624.456845</MinScaleDenominator>
+        <MaxScaleDenominator>1417410.714286</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>52</Name>
+        <Title><![CDATA[Diaľnica, Rýchlostná cesta]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.674003</westBoundLongitude><eastBoundLongitude>22.565541</eastBoundLongitude><southBoundLatitude>47.653510</southBoundLatitude><northBoundLatitude>49.648937</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.674003" miny="47.653510" maxx="22.565541" maxy="49.648937"/>
+<BoundingBox CRS="EPSG:4326" minx="47.653510" miny="16.674003" maxx="49.648937" maxy="22.565541"/>
+<BoundingBox CRS="EPSG:5514" minx="-591185.812600" miny="-1333919.374500" maxx="-169487.437500" maxy="-1139894.250500"/>
+<BoundingBox CRS="EPSG:102067" minx="-591185.812600" miny="-1333919.374500" maxx="-169487.437500" maxy="-1139894.250500"/>
+        <Style>
+          <Name>default</Name>
+          <Title>52</Title>
+          <LegendURL width="240" height="36">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=52" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MinScaleDenominator>23624.456845</MinScaleDenominator>
+        <MaxScaleDenominator>1417410.714286</MaxScaleDenominator>
+      </Layer>
+      </Layer>
+      <Layer queryable="1">
+        <Name>53</Name>
+        <Title><![CDATA[ZBGIS®]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>16.661701</westBoundLongitude><eastBoundLongitude>22.620033</eastBoundLongitude><southBoundLatitude>47.645856</southBoundLatitude><northBoundLatitude>49.714709</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="16.661701" miny="47.645856" maxx="22.620033" maxy="49.714709"/>
+<BoundingBox CRS="EPSG:4326" minx="47.645856" miny="16.661701" maxx="49.714709" maxy="22.620033"/>
+<BoundingBox CRS="EPSG:5514" minx="-591311.252500" miny="-1334762.042500" maxx="-165436.882500" maxy="-1132697.422500"/>
+<BoundingBox CRS="EPSG:102067" minx="-591311.252500" miny="-1334762.042500" maxx="-165436.882500" maxy="-1132697.422500"/>
+        <Style>
+          <Name>default</Name>
+          <Title>53</Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://zbgisws.skgeodesy.sk/zbgis_antropogenne_prvky_wms_featureinfo/service.svc/get?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=53" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+    </Layer>
+  </Capability>
+</WMS_Capabilities>
