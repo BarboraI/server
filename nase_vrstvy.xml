@@ -39,13 +39,13 @@
         <Format>application/vnd.ogc.wms_xml</Format>
         <Format>text/xml</Format>
         <DCPType>
-          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://localhost:3021/wms?"/></Get></HTTP>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://localhost:3001/wms?"/></Get></HTTP>
         </DCPType>
       </GetCapabilities>
       <GetMap>
         <Format>image/png</Format>
         <DCPType>
-          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://localhost:3021/wms?"/></Get></HTTP>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://localhost:3001/wms?"/></Get></HTTP>
         </DCPType>
       </GetMap>
      </Request> 
