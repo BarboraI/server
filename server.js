@@ -1,18 +1,24 @@
 var express = require("express");
-var path = require("path");
 var server = express();
-var PORT = 3000
+var path = require("path");
+var fs = require("fs");
+var mapnik = require("mapnik"); // lib for map rendering
+var generateImage = require ('./wtgis_examples/mapnik_generate_image/generate_img.js');
 
+console.log(generateImage);
+var PORT=3000;
 
 server.get('/wms', function (request, response) {
   var params = request.query;
-  console.log(params)
+  console.log(params);
  if(params.SERVICE=== 'WMS' && params.REQUEST==='GetCapabilities'){
-  console.log('idem robit get capa')
-   response.sendFile(path.join(__dirname, 'nase_vrstvy.xml'))
+  response.sendFile(path.join(__dirname, 'nase_vrstvy.xml'))
+ }
+  else if(params.SERVICE=== 'WMS' && params.REQUEST==='GetMap'){
+    generateImage(params, response.sendFile.bind(response))
 }
   else {
-    response.send ('nejdem robit get capa')
+    response.send ('nepodporovana metoda')
   }
 
 })

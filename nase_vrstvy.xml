@@ -60,7 +60,7 @@
       </GetMap>
     </Request>
     <Layer>
-    <Name>1</Name>
+    <Name>budovy</Name>
       <Title><![CDATA[Budovy]]></Title>
 
       <CRS>EPSG:5514</CRS>
@@ -76,7 +76,7 @@
       </Layer>
      
       <Layer>
-      <Name>2</Name>
+      <Name>cesty</Name>
         <Title><![CDATA[Cesty]]></Title>
         <Abstract><![CDATA[]]></Abstract>
 
