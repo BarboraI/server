@@ -6,7 +6,7 @@ var server = express();
 var path = require("path");
 var fs = require("fs");
 var mapnik = require("mapnik"); // lib for map rendering
-var generateImage = require ('./generate_img.js');
+var generateImage = require ('./wtgis_examples/mapnik_generate_image/generate_img.js');
 
 console.log(generateImage);
 var PORT = 3001;
