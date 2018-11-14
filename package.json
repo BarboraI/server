@@ -12,5 +12,7 @@
   "dependencies": {
     "express": "^4.16.4",
     "fs": "0.0.1-security"
+    "mapnik": "^3.6.2",
+    "python": "0.0.4"
   }
 }
