@@ -50,15 +50,24 @@
       </GetMap>
      </Request> 
 <Layer queryable="0">
-<Name>budovy_a_cesty</Name>
-        <Title><![CDATA[budovy_a_cesty]]></Title>
+<Name>budovy</Name>
+        <Title><![CDATA[budovy]]></Title>
         <Abstract><![CDATA[]]></Abstract>
 <CRS>EPSG:5514</CRS>
  <!-- alias 5514 -->
 <CRS>EPSG:102067</CRS>
 <EX_GeographicBoundingBox><westBoundLongitude>17.869550</westBoundLongitude><eastBoundLongitude>17.917076</eastBoundLongitude><southBoundLatitude>48.722371</southBoundLatitude><northBoundLatitude>48.7512</northBoundLatitude></EX_GeographicBoundingBox>
 <BoundingBox CRS="EPSG:5514" minx="-511572.982" miny="-1222268.772" maxx="-507668.121" maxy="-1218115.828"/>
-        <MaxScaleDenominator>23623.511905</MaxScaleDenominator>   
+    </Layer>
+    <Layer queryable="0">
+<Name>cesty</Name>
+        <Title><![CDATA[cesty]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>17.869550</westBoundLongitude><eastBoundLongitude>17.917076</eastBoundLongitude><southBoundLatitude>48.722371</southBoundLatitude><northBoundLatitude>48.7512</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="EPSG:5514" minx="-511572.982" miny="-1222268.772" maxx="-507668.121" maxy="-1218115.828"/>
     </Layer>
   </Capability>
 </WMS_Capabilities>
