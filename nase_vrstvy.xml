@@ -3,13 +3,13 @@
   xmlns="http://www.opengis.net/wms"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:esri_wms="http://www.esri.com/wms"
-  xsi:schemaLocation="http://www.opengis.net/wms http://schemas.opengis.net/wms/1.3.0/capabilities_1_3_0.xsd http://www.esri.com/wms http://localhost:3001/wms?version=1.3.0%26service=WMS%26request=GetSchemaExtension">
+  xsi:schemaLocation="http://www.opengis.net/wms http://schemas.opengis.net/wms/1.3.0/capabilities_1_3_0.xsd http://www.esri.com/wms http://localhost:3002/wms?version=1.3.0%26service=WMS%26request=GetSchemaExtension">
   <Service>
     <Name><![CDATA[WMS]]></Name>
     <Title><![CDATA[SK_UGKK_ZBGIS_WMS_Antropogenne_prvky]]></Title>
     <Abstract><![CDATA[Zobrazenie atribútových údajov kategórie antropogénne prvky zo súboru objektov ZB GIS (A.2.2.2)]]></Abstract>
     <KeywordList><Keyword><![CDATA[WMS, Antropogénne prvky]]></Keyword></KeywordList>
-    <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://localhost:3001/wms?"/>
+    <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://localhost:3002/wms?"/>
     <ContactInformation>
       <ContactPersonPrimary>
         <ContactPerson><![CDATA[GKÚ]]></ContactPerson>
@@ -39,13 +39,13 @@
         <Format>application/vnd.ogc.wms_xml</Format>
         <Format>text/xml</Format>
         <DCPType>
-          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://localhost:3001/wms?"/></Get></HTTP>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://localhost:3002/wms?"/></Get></HTTP>
         </DCPType>
       </GetCapabilities>
       <GetMap>
         <Format>image/png</Format>
         <DCPType>
-          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://localhost:3001/wms?"/></Get></HTTP>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://localhost:3002/wms?"/></Get></HTTP>
         </DCPType>
       </GetMap>
      </Request> 

@@ -46,7 +46,7 @@ var schema = '<Map background-color="transparent" srs="'+proj+'">' + // we defin
                     '</Datasource>' +
                 '</Layer>' +
                 '<Layer name="budovy" srs="'+proj+'">' + // same as above
-                    '<StyleName>style_cesty</StyleName>' +
+                    '<StyleName>style_budovy</StyleName>' +
                     '<Datasource>' +
                         '<Parameter name="file">' + path.join( __dirname, 'data/budovy.shp' ) +'</Parameter>' +
                         '<Parameter name="type">shape</Parameter>' +

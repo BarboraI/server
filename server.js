@@ -18,7 +18,7 @@ server.get('/wms', function (request, response) {
     if(params.SERVICE === 'WMS' && params.REQUEST === 'GetCapabilities') {
       response.sendFile(path.join(__dirname, 'nase_vrstvy.xml'))
     } else if (params.SERVICE === 'WMS' && params.REQUEST === 'GetMap') {
-      ImageCreator(params, response.sendFile.bind(response))
+      generateImage(params, response.sendFile.bind(response))
     } else {
       response.send ('nepodporovana metoda')
     }
