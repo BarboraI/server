@@ -9,7 +9,7 @@ var mapnik = require("mapnik"); // lib for map rendering
 var generateImage = require ('./wtgis_examples/mapnik_generate_image/generate_img.js');
 
 console.log(generateImage);
-var PORT = 3001;
+var PORT = 3002;
 
 server.get('/wms', function (request, response) {
     var params = request.query;
