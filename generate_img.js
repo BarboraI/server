@@ -8,7 +8,7 @@ mapnik.register_default_input_plugins(); // same with plugins
 function generateImage(arg, sendFile){
 var width = Number(arg.WIDTH); // with of map image in pixels
 var height = Number(arg.HEIGHT); // height -||-
-var BBOX = arg.BBOX.split(',').map(function(elem){
+var bbox = arg.BBOX.split(',').map(function(elem){
     return Number(elem)}); // bottom left corner coords and top right corner coords of the image 
 var layers=(arg.LAYERS).split(',');
 
@@ -17,49 +17,89 @@ var map = new mapnik.Map(width, height);
 
 var addBudovy=arg.LAYERS.includes('budovy');
 var addCesty=arg.LAYERS.includes('cesty');
+var addLavicky=arg.LAYERS.includes('lavicky');
+var addPamiatky=arg.LAYERS.includes('pamiatky');
 
 var proj = "+proj=krovak +lat_0=49.5 +lon_0=24.83333333333333 +alpha=30.28813972222222 +k=0.9999 +x_0=0 +y_0=0 +ellps=bessel +towgs84=589,76,480,0,0,0,0 +units=m +no_defs";
 
 var style_budovy='<Style name="style_budovy">' + // style for layer "style_budovy"
 '<Rule>' +
     '<LineSymbolizer stroke="black" stroke-width="0.1" />' + // style for lines
-    '<PolygonSymbolizer fill="#f2cfaf"  />' + // style for polygons
+    '<PolygonSymbolizer fill="#cfc5bb"  />' + // style for polygons
 '</Rule>' +
 '</Style>' 
 
 var style_cesty='<Style name="style_cesty">' + // style for layer "style_cesty"
 '<Rule>' +
-    '<LineSymbolizer stroke="#d7c8b9" stroke-width="0.8" />' + // style for lines
+    '<LineSymbolizer stroke="#040302" stroke-width="0.8" />' + // style for lines
+'</Rule>' +
+'</Style>'
+
+var style_lavicky='<Style name="style_lavicky">' + // style for layer "style_lavicky"
+'<Rule>' +
+'<MaxScaleDenominator>3100</MaxScaleDenominator>' +
+// '<MinScaleDenominator>3000</MinScaleDenominator>'+
+'<MarkersSymbolizer file="./icons/lavicka.png" width="20" height="20" />'+
 '</Rule>' +
 '</Style>' 
 
-// schema of the rendered map
-var schema = '<Map background-color="transparent" srs="'+proj+'">' + // we define background color of the map and its spatial reference system with epsg code of data used
-                (addBudovy ? style_budovy : '') +
-                (addCesty ? style_cesty : '') +
+var style_pamiatky='<Style name="style_pamiatky">' + // style for layer "style_pamiatky"
+'<Rule>' +
+    '<MaxScaleDenominator>3100</MaxScaleDenominator>' +
+    '<MinScaleDenominator>200</MinScaleDenominator>'+
+    '<MarkersSymbolizer file= "./icons/pamiatka.png" width="20" height="20" />'+
+'</Rule>' +
+'</Style>'  
 
-                '<Layer name="cesty" srs="'+proj+'">' + // layer "cesty" with spatial reference system
-                    '<StyleName>style_cesty</StyleName>' + // binding of a style used for this layer => "style_cesty"
-                    '<Datasource>' + // definition of a data source
-                        '<Parameter name="file">' + path.join( __dirname, 'data/cesty.shp' ) +'</Parameter>' + // path to the data file
-                        '<Parameter name="type">shape</Parameter>' + // file type
-                    '</Datasource>' +
-                '</Layer>' +
-                '<Layer name="budovy" srs="'+proj+'">' + // same as above
-                    '<StyleName>style_budovy</StyleName>' +
-                    '<Datasource>' +
-                        '<Parameter name="file">' + path.join( __dirname, 'data/budovy.shp' ) +'</Parameter>' +
-                        '<Parameter name="type">shape</Parameter>' +
-                    '</Datasource>' +
-                '</Layer>' +
-            '</Map>';
+var layer_cesty = '<Layer name="cesty" srs="'+proj+'">' + // layer "cesty" with spatial reference system
+'<StyleName>style_cesty</StyleName>' + // binding of a style used for this layer => "style_cesty"
+'<Datasource>' + // definition of a data source
+'<Parameter name="file">' + path.join( __dirname, 'data/cesty.shp' ) +'</Parameter>' + // path to the data file
+'<Parameter name="type">shape</Parameter>' + // file type
+'</Datasource>' +
+'</Layer>'
+var layer_budovy = '<Layer name="budovy" srs="'+proj+'">' + // same as above
+'<StyleName>style_budovy</StyleName>' +
+'<Datasource>' +
+'<Parameter name="file">' + path.join( __dirname, 'data/budovy.shp' ) +'</Parameter>' +
+'<Parameter name="type">shape</Parameter>' +
+'</Datasource>' +
+'</Layer>'
+
+var layer_lavicky = '<Layer name="lavicky" srs="'+proj+'">' + // same as above
+'<StyleName>style_lavicky</StyleName>' +
+'<Datasource>' +
+'<Parameter name="file">' + path.join( __dirname, 'data/lavicky.shp' ) +'</Parameter>' +
+'<Parameter name="type">shape</Parameter>' +
+'</Datasource>' +
+'</Layer>'
+
+var layer_pamiatky = '<Layer name="pamiatky" srs="'+proj+'">' + // same as above
+'<StyleName>style_pamiatky</StyleName>' +
+'<Datasource>' +
+'<Parameter name="file">' + path.join( __dirname, 'data/pamiatky.shp' ) +'</Parameter>' +
+'<Parameter name="type">shape</Parameter>' +
+'</Datasource>' +
+'</Layer>'
+
+// schema of the rendered map
+var schema = '<Map background-color="#FFFFFF" srs="'+proj+'">' + // we define background color of the map and its spatial reference system with epsg code of data used
+        (addBudovy ? style_budovy : ' ') +
+        (addCesty ? layer_cesty : '') +
+        (addCesty ? style_cesty : ' ') +
+        (addBudovy ? layer_budovy : '') +
+        (addLavicky ? style_lavicky : ' ') +
+        (addLavicky ? layer_lavicky : '') + 
+        (addPamiatky ? style_pamiatky : ' ') +
+        (addPamiatky ? layer_pamiatky : '') + 
+    '</Map>';
 // now we have a mapnik xml in variable schema that defines layers, data sources and styles of the layers
 
 map.fromString(schema, function(err, map) { // we use method "fromString" => we need to use the xml schema inside variable schema
   if (err) {
       console.log('Map Schema Error: ' + err.message) // if there is an error in schema processing we print it out
   }
-  map.zoomToBox(BBOX); // let's zoom our mapnik map to bounding box stored in BBOX variable
+  map.zoomToBox(bbox); // let's zoom our mapnik map to bounding box stored in BBOX variable
 
   var im = new mapnik.Image(width, height); // we define new mapnik image with the same width and height as our map
 

@@ -1,15 +1,14 @@
 var express = require("express");
 var server = express();
 var path = require("path");
-var express = require("express");
-var server = express();
-var path = require("path");
 var fs = require("fs");
-var mapnik = require("mapnik"); // lib for map rendering
-var generateImage = require ('./wtgis_examples/mapnik_generate_image/generate_img.js');
+var mapnik = require("mapnik"); // kniznica pre map rendering
+var generateImage = require ('./generate_img.js');
 
 console.log(generateImage);
 var PORT = 3002;
+
+server.use(express.static('icons'));
 
 server.get('/wms', function (request, response) {
     var params = request.query;

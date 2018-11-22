@@ -69,5 +69,27 @@
 <EX_GeographicBoundingBox><westBoundLongitude>17.869550</westBoundLongitude><eastBoundLongitude>17.917076</eastBoundLongitude><southBoundLatitude>48.722371</southBoundLatitude><northBoundLatitude>48.7512</northBoundLatitude></EX_GeographicBoundingBox>
 <BoundingBox CRS="EPSG:5514" minx="-511572.982" miny="-1222268.772" maxx="-507668.121" maxy="-1218115.828"/>
     </Layer>
+    <Layer queryable="0">
+<Name>lavicky</Name>
+      <Title><![CDATA[lavicky]]></Title>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>17.869550</westBoundLongitude><eastBoundLongitude>17.917076</eastBoundLongitude><southBoundLatitude>48.722371</southBoundLatitude><northBoundLatitude>48.7512</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="EPSG:5514" minx="-507668.121" miny="-1218115.828" maxx="-511572.982" maxy="-1222268.772"/>
+<MaxScaleDenominator>10</MaxScaleDenominator> 
+<MinScaleDenominator>5</MinScaleDenominator>
+    </Layer>
+    <Layer queryable="0">
+<Name>pamiatky</Name>
+      <Title><![CDATA[pamiatky]]></Title>
+<CRS>EPSG:5514</CRS>
+ <!-- alias 5514 -->
+<CRS>EPSG:102067</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>17.869550</westBoundLongitude><eastBoundLongitude>17.917076</eastBoundLongitude><southBoundLatitude>48.722371</southBoundLatitude><northBoundLatitude>48.7512</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="EPSG:5514" minx="-507668.121" miny="-1218115.828" maxx="-511572.982" maxy="-1222268.772"/>
+<MaxScaleDenominator>10</MaxScaleDenominator> 
+<MinScaleDenominator>5</MinScaleDenominator>
+    </Layer>
   </Capability>
 </WMS_Capabilities>
