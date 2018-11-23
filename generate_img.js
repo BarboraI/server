@@ -19,19 +19,27 @@ var addBudovy=arg.LAYERS.includes('budovy');
 var addCesty=arg.LAYERS.includes('cesty');
 var addLavicky=arg.LAYERS.includes('lavicky');
 var addPamiatky=arg.LAYERS.includes('pamiatky');
+var addParkovisko=arg.LAYERS.includes('parkovisko');
 
 var proj = "+proj=krovak +lat_0=49.5 +lon_0=24.83333333333333 +alpha=30.28813972222222 +k=0.9999 +x_0=0 +y_0=0 +ellps=bessel +towgs84=589,76,480,0,0,0,0 +units=m +no_defs";
 
 var style_budovy='<Style name="style_budovy">' + // style for layer "style_budovy"
 '<Rule>' +
-    '<LineSymbolizer stroke="black" stroke-width="0.1" />' + // style for lines
-    '<PolygonSymbolizer fill="#cfc5bb"  />' + // style for polygons
+    '<LineSymbolizer stroke="black" stroke-width="0.3" />' + // style for lines
+    '<PolygonSymbolizer fill="#e7893a"  />' + // style for polygons
+'</Rule>' +
+'</Style>' 
+
+var style_parkovisko='<Style name="style_parkovisko">' + // style for layer "style_parkovisko"
+'<Rule>' +
+    '<LineSymbolizer stroke="black" stroke-width="0.6" />' + // style for lines
+    '<PolygonSymbolizer fill="#95958f"  />' + // style for polygons
 '</Rule>' +
 '</Style>' 
 
 var style_cesty='<Style name="style_cesty">' + // style for layer "style_cesty"
 '<Rule>' +
-    '<LineSymbolizer stroke="#040302" stroke-width="0.8" />' + // style for lines
+    '<LineSymbolizer stroke="#040302" stroke-width="1.0" />' + // style for lines
 '</Rule>' +
 '</Style>'
 
@@ -39,7 +47,7 @@ var style_lavicky='<Style name="style_lavicky">' + // style for layer "style_lav
 '<Rule>' +
 '<MaxScaleDenominator>3100</MaxScaleDenominator>' +
 // '<MinScaleDenominator>3000</MinScaleDenominator>'+
-'<MarkersSymbolizer file="./icons/lavicka.png" width="20" height="20" />'+
+'<MarkersSymbolizer file="./icons/lavicka1.png" width="20" height="20" />'+
 '</Rule>' +
 '</Style>' 
 
@@ -47,7 +55,7 @@ var style_pamiatky='<Style name="style_pamiatky">' + // style for layer "style_p
 '<Rule>' +
     '<MaxScaleDenominator>3100</MaxScaleDenominator>' +
     '<MinScaleDenominator>200</MinScaleDenominator>'+
-    '<MarkersSymbolizer file= "./icons/pamiatka.png" width="20" height="20" />'+
+    '<MarkersSymbolizer file= "./icons/pamiatka.png" width="30" height="30" />'+
 '</Rule>' +
 '</Style>'  
 
@@ -58,6 +66,7 @@ var layer_cesty = '<Layer name="cesty" srs="'+proj+'">' + // layer "cesty" with 
 '<Parameter name="type">shape</Parameter>' + // file type
 '</Datasource>' +
 '</Layer>'
+
 var layer_budovy = '<Layer name="budovy" srs="'+proj+'">' + // same as above
 '<StyleName>style_budovy</StyleName>' +
 '<Datasource>' +
@@ -65,6 +74,14 @@ var layer_budovy = '<Layer name="budovy" srs="'+proj+'">' + // same as above
 '<Parameter name="type">shape</Parameter>' +
 '</Datasource>' +
 '</Layer>'
+
+var layer_parkovisko = '<Layer name="parkovisko" srs="'+proj+'">' + // same as above
+'<StyleName>style_parkovisko</StyleName>' +
+'<Datasource>' +
+'<Parameter name="file">' + path.join( __dirname, 'data/parkovisko.shp' ) +'</Parameter>' +
+'<Parameter name="type">shape</Parameter>' +
+'</Datasource>' +
+'</Layer>' 
 
 var layer_lavicky = '<Layer name="lavicky" srs="'+proj+'">' + // same as above
 '<StyleName>style_lavicky</StyleName>' +
@@ -83,15 +100,18 @@ var layer_pamiatky = '<Layer name="pamiatky" srs="'+proj+'">' + // same as above
 '</Layer>'
 
 // schema of the rendered map
-var schema = '<Map background-color="#FFFFFF" srs="'+proj+'">' + // we define background color of the map and its spatial reference system with epsg code of data used
+var schema = '<Map background-color="#f9f7cb" srs="'+proj+'">' + // we define background color of the map and its spatial reference system with epsg code of data used
+        (addParkovisko ? style_parkovisko : '') +
+        (addParkovisko ? layer_parkovisko : '') +
         (addBudovy ? style_budovy : ' ') +
-        (addCesty ? layer_cesty : '') +
+        (addBudovy ? layer_budovy : ' ') +
         (addCesty ? style_cesty : ' ') +
-        (addBudovy ? layer_budovy : '') +
+        (addCesty ? layer_cesty : ' ') +
         (addLavicky ? style_lavicky : ' ') +
         (addLavicky ? layer_lavicky : '') + 
-        (addPamiatky ? style_pamiatky : ' ') +
+        (addPamiatky ? style_pamiatky : '') +
         (addPamiatky ? layer_pamiatky : '') + 
+
     '</Map>';
 // now we have a mapnik xml in variable schema that defines layers, data sources and styles of the layers
 
