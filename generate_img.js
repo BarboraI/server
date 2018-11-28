@@ -20,42 +20,87 @@ var addCesty=arg.LAYERS.includes('cesty');
 var addLavicky=arg.LAYERS.includes('lavicky');
 var addPamiatky=arg.LAYERS.includes('pamiatky');
 var addParkovisko=arg.LAYERS.includes('parkovisko');
+var addCintorin=arg.LAYERS.includes('cintorin');
 
 var proj = "+proj=krovak +lat_0=49.5 +lon_0=24.83333333333333 +alpha=30.28813972222222 +k=0.9999 +x_0=0 +y_0=0 +ellps=bessel +towgs84=589,76,480,0,0,0,0 +units=m +no_defs";
 
 var style_budovy='<Style name="style_budovy">' + // style for layer "style_budovy"
 '<Rule>' +
-    '<LineSymbolizer stroke="black" stroke-width="0.3" />' + // style for lines
+    '<LineSymbolizer stroke="#c77207" stroke-width="2.3" />' + // style for lines
     '<PolygonSymbolizer fill="#e7893a"  />' + // style for polygons
 '</Rule>' +
 '</Style>' 
 
 var style_parkovisko='<Style name="style_parkovisko">' + // style for layer "style_parkovisko"
 '<Rule>' +
-    '<LineSymbolizer stroke="black" stroke-width="0.6" />' + // style for lines
-    '<PolygonSymbolizer fill="#95958f"  />' + // style for polygons
+    '<LineSymbolizer stroke="black" stroke-width="2.5" />' + // style for lines
+    '<PolygonSymbolizer fill="#95958f" stroke-opacity="0.1"  />' + // style for polygons
 '</Rule>' +
-'</Style>' 
-
-var style_cesty='<Style name="style_cesty">' + // style for layer "style_cesty"
 '<Rule>' +
-    '<LineSymbolizer stroke="#040302" stroke-width="1.0" />' + // style for lines
+    '<MaxScaleDenominator>3100</MaxScaleDenominator>' +
+    '<MinScaleDenominator>800</MinScaleDenominator>'+
+    '<PointSymbolizer file= "./icons/parkovisko1.png" type="png" transform="scale(0.005,0.005)"/>' + 
+'</Rule>' +
+'<Rule>' +
+    '<MaxScaleDenominator>799</MaxScaleDenominator>' +
+    '<MinScaleDenominator>200</MinScaleDenominator>'+
+    '<PointSymbolizer file= "./icons/parkovisko1.png" transform="scale(0.01,0.01)" />'+
+'</Rule>' +
+'<Rule>' +
+    '<MaxScaleDenominator>199</MaxScaleDenominator>' +
+    '<MinScaleDenominator>0.1</MinScaleDenominator>'+
+    '<PointSymbolizer file= "./icons/parkovisko1.png" transform="scale(0.02,0.02)" />'+
 '</Rule>' +
 '</Style>'
 
+var style_cintorin='<Style name="style_cintorin">' + // style for layer "style_cintorin"
+'<Rule>' +
+    '<LineSymbolizer stroke="#257715" stroke-width="2.0" />' + // style for lines
+    '<PolygonSymbolizer fill="#58b146"  />' + // style for polygons
+'</Rule>' +
+'<Rule>' +
+    '<MaxScaleDenominator>6000</MaxScaleDenominator>' +
+    '<MinScaleDenominator>800</MinScaleDenominator>'+
+    '<MarkersSymbolizer file= "./icons/hrob.png" width="30" height="40" />' + 
+'</Rule>' +
+'</Style>'
+
+
+var style_cesty='<Style name="style_cesty">' + // style for layer "style_cesty"
+'<Rule>' +
+            '<MinScaleDenominator>7500</MinScaleDenominator>'+
+            '<LineSymbolizer stroke="#010600" stroke-width="1"/>' + // style for lines
+        '</Rule>' +
+        '<Rule>' +
+            '<MaxScaleDenominator>7000</MaxScaleDenominator>'+
+            '<MinScaleDenominator>90</MinScaleDenominator>'+
+            '<LineSymbolizer stroke="#bcb4ae" stroke-width="3" stroke-linecap="round" />' + // style for lines
+        '</Rule>' +
+        '<Rule>' +
+            '<MaxScaleDenominator>8000</MaxScaleDenominator>'+
+            '<MinScaleDenominator>90</MinScaleDenominator>'+
+            '<LineSymbolizer stroke="#010600" stroke-width="2" stroke-dasharray="5 2" />' + // style for lines
+        '</Rule>' +
+'</Style>' 
+
 var style_lavicky='<Style name="style_lavicky">' + // style for layer "style_lavicky"
 '<Rule>' +
-'<MaxScaleDenominator>3100</MaxScaleDenominator>' +
-// '<MinScaleDenominator>3000</MinScaleDenominator>'+
-'<MarkersSymbolizer file="./icons/lavicka1.png" width="20" height="20" />'+
+    '<MaxScaleDenominator>3100</MaxScaleDenominator>' +
+    '<MinScaleDenominator>400</MinScaleDenominator>'+
+    '<PointSymbolizer file= "./icons/lavicka1.png" transform="scale(0.015,0.015)" />'+
+'</Rule>' +
+'<Rule>' +
+    '<MaxScaleDenominator>399</MaxScaleDenominator>' +
+    '<MinScaleDenominator>1</MinScaleDenominator>'+
+    '<PointSymbolizer file= "./icons/lavicka1.png" transform="scale(0.1,0.1)" />'+
 '</Rule>' +
 '</Style>' 
 
 var style_pamiatky='<Style name="style_pamiatky">' + // style for layer "style_pamiatky"
 '<Rule>' +
-    '<MaxScaleDenominator>3100</MaxScaleDenominator>' +
-    '<MinScaleDenominator>200</MinScaleDenominator>'+
-    '<MarkersSymbolizer file= "./icons/pamiatka.png" width="30" height="30" />'+
+    '<MaxScaleDenominator>6100</MaxScaleDenominator>' +
+    '<MinScaleDenominator>400</MinScaleDenominator>'+
+    '<MarkersSymbolizer file= "./icons/pamiatka.png" width="40" height="40" />'+
 '</Rule>' +
 '</Style>'  
 
@@ -83,6 +128,15 @@ var layer_parkovisko = '<Layer name="parkovisko" srs="'+proj+'">' + // same as a
 '</Datasource>' +
 '</Layer>' 
 
+var layer_cintorin = '<Layer name="cintorin" srs="'+proj+'">' + // same as above
+'<StyleName>style_cintorin</StyleName>' +
+'<Datasource>' +
+'<Parameter name="file">' + path.join( __dirname, 'data/cintorin.shp' ) +'</Parameter>' +
+'<Parameter name="type">shape</Parameter>' +
+'</Datasource>' +
+'</Layer>' 
+
+
 var layer_lavicky = '<Layer name="lavicky" srs="'+proj+'">' + // same as above
 '<StyleName>style_lavicky</StyleName>' +
 '<Datasource>' +
@@ -103,6 +157,8 @@ var layer_pamiatky = '<Layer name="pamiatky" srs="'+proj+'">' + // same as above
 var schema = '<Map background-color="#f9f7cb" srs="'+proj+'">' + // we define background color of the map and its spatial reference system with epsg code of data used
         (addParkovisko ? style_parkovisko : '') +
         (addParkovisko ? layer_parkovisko : '') +
+        (addCintorin ? style_cintorin : '') +
+        (addCintorin ? layer_cintorin : '') +
         (addBudovy ? style_budovy : ' ') +
         (addBudovy ? layer_budovy : ' ') +
         (addCesty ? style_cesty : ' ') +
