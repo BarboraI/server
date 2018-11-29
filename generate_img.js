@@ -97,6 +97,13 @@ var style_lavicky='<Style name="style_lavicky">' + // style for layer "style_lav
 
 var style_pamiatky='<Style name="style_pamiatky">' + // style for layer "style_pamiatky"
 '<Rule>' +
+    "<Filter>[TYP] = 'Hrobka'</Filter>"+
+    '<MaxScaleDenominator>6100</MaxScaleDenominator>' +
+    '<MinScaleDenominator>400</MinScaleDenominator>'+
+    '<MarkersSymbolizer file= "./icons/hrobka.png" width="40" height="40" />'+
+'</Rule>' +
+'<Rule>' +
+    "<Filter>[TYP] = 'Socha'</Filter>"+
     '<MaxScaleDenominator>6100</MaxScaleDenominator>' +
     '<MinScaleDenominator>400</MinScaleDenominator>'+
     '<MarkersSymbolizer file= "./icons/pamiatka.png" width="40" height="40" />'+
