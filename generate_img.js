@@ -34,22 +34,12 @@ var style_budovy='<Style name="style_budovy">' + // style for layer "style_budov
 var style_parkovisko='<Style name="style_parkovisko">' + // style for layer "style_parkovisko"
 '<Rule>' +
     '<LineSymbolizer stroke="black" stroke-width="2.5" />' + // style for lines
-    '<PolygonSymbolizer fill="#95958f"   />' + // style for polygons
+    '<PolygonSymbolizer fill="#cac8c7"   />' + // style for polygons
 '</Rule>' +
 '<Rule>' +
-    '<MaxScaleDenominator>3100</MaxScaleDenominator>' +
-    '<MinScaleDenominator>800</MinScaleDenominator>'+
-    '<PointSymbolizer file= "./icons/parkovisko1.png" transform="scale(0.005,0.005)"/>' + 
-'</Rule>' +
-'<Rule>' +
-    '<MaxScaleDenominator>799</MaxScaleDenominator>' +
-    '<MinScaleDenominator>200</MinScaleDenominator>'+
-    '<PointSymbolizer file= "./icons/parkovisko1.png" transform="scale(0.01,0.01)" />'+
-'</Rule>' +
-'<Rule>' +
-    '<MaxScaleDenominator>199</MaxScaleDenominator>' +
-    '<MinScaleDenominator>0.1</MinScaleDenominator>'+
-    '<PointSymbolizer file= "./icons/parkovisko1.png" transform="scale(0.02,0.02)" />'+
+    '<MaxScaleDenominator>3500</MaxScaleDenominator>' +
+    '<MinScaleDenominator>100</MinScaleDenominator>'+
+    '<TextSymbolizer placement="dummy" face-name="DejaVu Sans Condensed Bold" size="12" fill="#4043e0" allow-overlap="false" clip="false"> "P" </TextSymbolizer>'+
 '</Rule>' +
 '</Style>'
 
