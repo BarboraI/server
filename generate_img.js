@@ -68,19 +68,19 @@ var style_cintorin='<Style name="style_cintorin">' + // style for layer "style_c
 
 var style_cesty='<Style name="style_cesty">' + // style for layer "style_cesty"
 '<Rule>' +
-            '<MinScaleDenominator>7500</MinScaleDenominator>'+
-            '<LineSymbolizer stroke="#010600" stroke-width="1"/>' + // style for lines
-        '</Rule>' +
-        '<Rule>' +
-            '<MaxScaleDenominator>7000</MaxScaleDenominator>'+
-            '<MinScaleDenominator>90</MinScaleDenominator>'+
-            '<LineSymbolizer stroke="#bcb4ae" stroke-width="3" stroke-linecap="round" />' + // style for lines
-        '</Rule>' +
-        '<Rule>' +
-            '<MaxScaleDenominator>8000</MaxScaleDenominator>'+
-            '<MinScaleDenominator>90</MinScaleDenominator>'+
-            '<LineSymbolizer stroke="#010600" stroke-width="2" stroke-dasharray="5 2" />' + // style for lines
-        '</Rule>' +
+    '<MinScaleDenominator>7500</MinScaleDenominator>'+
+    '<LineSymbolizer stroke="#010600" stroke-width="1"/>' + // style for lines
+'</Rule>' +
+'<Rule>' +
+    '<MaxScaleDenominator>7000</MaxScaleDenominator>'+
+    '<MinScaleDenominator>90</MinScaleDenominator>'+
+    '<LineSymbolizer stroke="#bcb4ae" stroke-width="3" stroke-linecap="round" />' + // style for lines
+'</Rule>' +
+'<Rule>' +
+    '<MaxScaleDenominator>8000</MaxScaleDenominator>'+
+    '<MinScaleDenominator>90</MinScaleDenominator>'+
+    '<LineSymbolizer stroke="#010600" stroke-width="2" stroke-dasharray="5 2" />' + // style for lines
+'</Rule>' +
 '</Style>' 
 
 var style_lavicky='<Style name="style_lavicky">' + // style for layer "style_lavicky"
