@@ -34,12 +34,12 @@ var style_budovy='<Style name="style_budovy">' + // style for layer "style_budov
 var style_parkovisko='<Style name="style_parkovisko">' + // style for layer "style_parkovisko"
 '<Rule>' +
     '<LineSymbolizer stroke="black" stroke-width="2.5" />' + // style for lines
-    '<PolygonSymbolizer fill="#95958f" stroke-opacity="0.1"  />' + // style for polygons
+    '<PolygonSymbolizer fill="#95958f"   />' + // style for polygons
 '</Rule>' +
 '<Rule>' +
     '<MaxScaleDenominator>3100</MaxScaleDenominator>' +
     '<MinScaleDenominator>800</MinScaleDenominator>'+
-    '<PointSymbolizer file= "./icons/parkovisko1.png" type="png" transform="scale(0.005,0.005)"/>' + 
+    '<PointSymbolizer file= "./icons/parkovisko1.png" transform="scale(0.005,0.005)"/>' + 
 '</Rule>' +
 '<Rule>' +
     '<MaxScaleDenominator>799</MaxScaleDenominator>' +
@@ -58,13 +58,22 @@ var style_cintorin='<Style name="style_cintorin">' + // style for layer "style_c
     '<LineSymbolizer stroke="#257715" stroke-width="2.0" />' + // style for lines
     '<PolygonSymbolizer fill="#58b146"  />' + // style for polygons
 '</Rule>' +
-'<Rule>' +
-    '<MaxScaleDenominator>6000</MaxScaleDenominator>' +
-    '<MinScaleDenominator>800</MinScaleDenominator>'+
-    '<MarkersSymbolizer file= "./icons/hrob.png" width="30" height="40" />' + 
-'</Rule>' +
+'<Rule>'+
+    '<MaxScaleDenominator>7000</MaxScaleDenominator>'+
+    '<MinScaleDenominator>2501</MinScaleDenominator>'+
+    '<PolygonPatternSymbolizer file="./icons/hrob.png"/>'+
+'</Rule>'+
+'<Rule>'+
+    '<MaxScaleDenominator>2500</MaxScaleDenominator>'+
+    '<MinScaleDenominator>501</MinScaleDenominator>'+
+    '<PolygonPatternSymbolizer file="./icons/hrob.png"/>'+
+'</Rule>'+
+'<Rule>'+
+    '<MaxScaleDenominator>300</MaxScaleDenominator>'+
+    '<MinScaleDenominator>1</MinScaleDenominator>'+
+    '<PolygonPatternSymbolizer file="./icons/hrob.png"/>'+
+'</Rule>'+
 '</Style>'
-
 
 var style_cesty='<Style name="style_cesty">' + // style for layer "style_cesty"
 '<Rule>' +
@@ -85,14 +94,14 @@ var style_cesty='<Style name="style_cesty">' + // style for layer "style_cesty"
 
 var style_lavicky='<Style name="style_lavicky">' + // style for layer "style_lavicky"
 '<Rule>' +
-    '<MaxScaleDenominator>3100</MaxScaleDenominator>' +
+    '<MaxScaleDenominator>2100</MaxScaleDenominator>' +
     '<MinScaleDenominator>400</MinScaleDenominator>'+
     '<PointSymbolizer file= "./icons/lavicka1.png" transform="scale(0.015,0.015)" />'+
 '</Rule>' +
 '<Rule>' +
     '<MaxScaleDenominator>399</MaxScaleDenominator>' +
     '<MinScaleDenominator>1</MinScaleDenominator>'+
-    '<PointSymbolizer file= "./icons/lavicka1.png" transform="scale(0.1,0.1)" />'+
+    '<PointSymbolizer file= "./icons/lavicka1.png" transform="scale(0.08,0.08)" />'+
 '</Rule>' +
 '</Style>' 
 
