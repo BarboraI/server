@@ -6,8 +6,8 @@ mapnik.register_default_fonts(); // registrácia  niektorých predvolených font
 mapnik.register_default_input_plugins(); // registrácia predvolených pliginov do mapniku
 
 function generateImage(arg, sendFile){ //funcia na generovanie obrázku
-var width = Number(arg.WIDTH); // definovanie šírky mapového okna 
-var height = Number(arg.HEIGHT); //definovanie výšky mapového okna 
+var width = Number(arg.WIDTH); // definovanie šírky mapového okna v pixeloch
+var height = Number(arg.HEIGHT); //definovanie výšky mapového okna; Number zabezpečí prevod pôvodných vtupných hodnôt na číslo
 var bbox = arg.BBOX.split(',').map(function(elem){ //prechádzanie elementov v poli po predchádzajucom rozdelení podla čiarky a ich konvertovanie cez funkciu na číslo
     return Number(elem)}); // celé to  laicky znamená definovanie pravého horného a ľavého dolného rohu map.okna; prevedenie zo string-u na numerický tvar, čiže číslo
 var layers=(arg.LAYERS).split(','); //rozdelenie popisu vrstiev čiarkou (napr. budovy, cesty,lavičky atď.)
@@ -23,7 +23,7 @@ var addCintorin=arg.LAYERS.includes('cintorin'); //detto
 
 var proj = "+proj=krovak +lat_0=49.5 +lon_0=24.83333333333333 +alpha=30.28813972222222 +k=0.9999 +x_0=0 +y_0=0 +ellps=bessel +towgs84=589,76,480,0,0,0,0 +units=m +no_defs"; //definovanie premennej, ktorá definuje súradnicový systém (projekciu)
 
-var style_budovy='<Style name="style_budovy">' + //definovanie premennej, ktorá obsahuje parametre štýlovania a názov štýlu
+var style_budovy='<Style name="style_budovy">' + //štýlovanie danje vrstvy
 '<Rule>' + //začiatok zapisovania parametrov štýlovania
     '<LineSymbolizer stroke="#c77207" stroke-width="2.3" />' + // nastavenie oranžovej farby pre líniu, ktorá ohraničuje tvar budov
     '<PolygonSymbolizer fill="#e7893a"  />' + // nastavenie oranžovej farby pre výplň budov 
@@ -183,7 +183,7 @@ map.fromString(schema, function(err, map) { //funkciou načítame XML schému
 
   var im = new mapnik.Image(width, height); // definovanie nového mapnik obrázka s rovnakou šírkou a výškou 
 
-  map.render(im, function(err, im) { //vygenerovanie mapového obrázka z premennej "im"
+  map.render(im, function(err, im) { // vygenerovanie mapy do mapnik obrázka, ktorý je uložený v premennej "im" 
       
     if (err) {
         console.log('Map redner Error: ' + err.message) // vypíše zdroj chyby v prípade, že nastala chyba
@@ -206,7 +206,7 @@ map.fromString(schema, function(err, map) { //funkciou načítame XML schému
                                                 // po správe "Image generated into....." je obraz uložený v priečinku out
             
           );
-          sendFile(path.join(__dirname ,"out/map.png")); //cesta k vygenerovanému mapovému obrázku
+          sendFile(path.join(__dirname ,"out/map.png")); // odoslanie daného obsahu podľa danej cesty do uvedeného adresára
         }
       );
     });
